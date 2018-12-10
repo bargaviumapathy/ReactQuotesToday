@@ -9,11 +9,14 @@ const headerStyle = {
   textAlign: "center"
 };
 
+const twitterUrl = "https://twitter.com/home/?status=";
+
 class App extends Component {
   state = {
     quote: "",
     author: "",
-    bgColor: "lightgreen"
+    bgColor: "lightgreen",
+    canShare: false
   };
 
   bgColors = [
@@ -47,8 +50,8 @@ class App extends Component {
             </button>
             <a
               id="twitter"
-              className="btn btn-dark btn-lg btn-text-share"
-              href="#"
+              className={this.getAnchorClass()}
+              href={twitterUrl + this.state.quote + "-" + this.state.author}
               target="_blank"
               role="button"
             >
@@ -77,6 +80,15 @@ class App extends Component {
     this.handleChangeBackground();
   };
 
+  getAnchorClass = () => {
+    let classForAnchor = "";
+    classForAnchor = this.state.canShare
+      ? "btn btn-dark btn-lg btn-text-share"
+      : "btn btn-dark btn-lg btn-text-share disabled";
+
+    return classForAnchor;
+  };
+
   getQuote = () => {
     console.log(this);
     axios
@@ -84,14 +96,12 @@ class App extends Component {
       .then(response => {
         console.log(this);
         this.setState({
-          quote: response.data.contents.quotes[0].quote
-        });
-        this.setState({
-          author: response.data.contents.quotes[0].author
+          quote: response.data.contents.quotes[0].quote,
+          author: response.data.contents.quotes[0].author,
+          canShare: true
         });
       })
       .catch(function(error) {
-        debugger;
         console.log(error);
       });
   };
