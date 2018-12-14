@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "af7ae505a9eed503f8b8e6982036873e",
-    "url": "/ReactQuotesToday/static/media/fontawesome-webfont.af7ae505.woff2"
+    "revision": "674f50d287a8c48dc19ba404d20fe713",
+    "url": "/ReactQuotesToday/static/media/fontawesome-webfont.674f50d2.eot"
   },
   {
     "revision": "a30db5e7961f4b4527a7",
@@ -24,8 +24,8 @@ self.__precacheManifest = [
     "url": "/ReactQuotesToday/static/js/main.a30db5e7.chunk.js"
   },
   {
-    "revision": "674f50d287a8c48dc19ba404d20fe713",
-    "url": "/ReactQuotesToday/static/media/fontawesome-webfont.674f50d2.eot"
+    "revision": "af7ae505a9eed503f8b8e6982036873e",
+    "url": "/ReactQuotesToday/static/media/fontawesome-webfont.af7ae505.woff2"
   },
   {
     "revision": "fee66e712a8a08eef5805a46892932ad",
